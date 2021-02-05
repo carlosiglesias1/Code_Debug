@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Estadisticos.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Code_Debug</a> &gt; <a href="index.source.html" class="el_package">probas</a> &gt; <span class="el_source">Estadisticos.java</span></div><h1>Estadisticos.java</h1><pre class="source lang-java linenums">package probas;
+
+public class Estadisticos {
+    private int m;
+    private int n;
+
+<span class="fc" id="L7">    public Estadisticos(int m, int n) throws Exception {</span>
+<span class="pc bpc" id="L8" title="4 of 8 branches missed.">        if (m &lt; 0 || n &lt; 0 || m &lt; n||m&gt;170) {</span>
+<span class="nc" id="L9">            throw new Exception(&quot;Error. &quot; + &quot;Los argumentos tienen que ser &gt;=0 y el primero &gt;= que el segundo&quot;);</span>
+        }
+<span class="fc" id="L11">        this.n = n;</span>
+<span class="fc" id="L12">        this.m = m;</span>
+<span class="fc" id="L13">    }</span>
+
+    /* Cálculo Factorial o permutaciones de x */
+    public double factorial(int x) throws Exception {
+<span class="fc" id="L17">        double resultado = 1;</span>
+<span class="pc bpc" id="L18" title="1 of 2 branches missed.">        for (int i = 2; i &lt;= x; i++) {</span>
+<span class="nc" id="L19">            resultado *= i;</span>
+        }
+<span class="fc" id="L21">        return resultado;</span>
+    }
+
+    /* Cálculo Combinaciones de m elementos tomados de n en n */
+    public double combinaciones() throws Exception {
+<span class="fc" id="L26">        double combi = factorial(m) / (factorial(n) * factorial(m - n));</span>
+<span class="fc" id="L27">        return combi;</span>
+    }
+
+    /* Cálculo Variaciones de m elementos tomados de n en n */
+    public double variaciones() throws Exception {
+<span class="fc" id="L32">        double vari = combinaciones() * factorial(n);</span>
+<span class="fc" id="L33">        return vari;</span>
+    }
+
+    /* Cálculo Variaciones con repetición de m elementos tomados de n en n */
+    public double variac_repet() throws Exception {
+<span class="fc" id="L38">        double varirepe = Math.pow(m, n);</span>
+<span class="fc" id="L39">        return varirepe;</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
