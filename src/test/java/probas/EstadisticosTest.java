@@ -68,8 +68,6 @@ public class EstadisticosTest {
         double expResult = 1.0;
         double result = instance.variaciones();
         assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        
     }
 
     /**
